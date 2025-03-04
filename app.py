@@ -10,6 +10,7 @@ from flask import (
 )
 from werkzeug.utils import secure_filename
 import uuid
+from utils.process_image import process_image
 
 # Config
 UPLOAD_FOLDER = "uploads"
@@ -80,7 +81,7 @@ def upload_image():
             flash(
                 "Image uploaded successfully. Processing will be implemented in future phases."
             )
-
+            process_image(file_path,unique_filename,mock=True)
             return redirect(url_for("upload_image"))
         else:
             flash(
