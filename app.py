@@ -81,7 +81,7 @@ def upload_image():
             flash(
                 "Image uploaded successfully. Processing will be implemented in future phases."
             )
-            process_image(file_path,unique_filename,mock=True)
+            process_image(file_path,unique_filename,mock=False)
             return redirect(url_for("upload_image"))
         else:
             flash(
